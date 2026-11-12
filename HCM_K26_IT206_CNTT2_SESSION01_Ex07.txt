@@ -1,0 +1,32 @@
+SESSION01
+Bài 7: Thiết kế Quy trình Che mờ (Data Masking) Khách VIP
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Kỹ năng PROMPTING với AI
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần A: Bảng che mờ
+Thông tin PII thật			Nhãn che mờ	Loại dữ liệu
+Phạm Minh C				[TÊN_KH]	Họ tên
+0988.111.222				[SĐT_KH]	Số điện thoại
+minhc@gmail.com				[EMAIL_KH]	Email
+
+Căn hộ 502 Chung cư Sunrise, Q7	[ĐỊA_CHỈ_KH] Địa chỉ nhà
+Giữ lại ngày mua, sản phẩm, giá tiền, cửa hàng vì không xác định được cá nhân, AI vẫn hiểu ngữ cảnh.
+
+Phần B: Văn bản đã che mờ
+Tôi là [TÊN_KH] (SĐT: [SĐT_KH], Email: [EMAIL_KH], ở [ĐỊA_CHỈ_KH]). Ngày 20/09 tôi mua 2kg thịt bò Wagyu giá 4.500.000 VNĐ tại MartX District 7 nhưng bị giao chậm 3 tiếng làm hỏng tiệc gia đình. Tôi yêu cầu bồi thường 100%! Đã thay 100% thông tin cá nhân bằng nhãn, vẫn giữ cách xưng “Tôi”.
+
+Phần C: Prompt gửi AI
+Bạn là nhân viên CSKH siêu thị MartX, giọng lịch sự, chân thành. Dưới đây là email khiếu nại của khách VIP (thông tin cá nhân đã được thay bằng nhãn):
+“[dán Masked Input ở Phần B]”
+Hãy soạn thư xin lỗi gồm: xin lỗi chân thành, nhắc lại sự việc, nói sẽ xem xét bồi thường và phản hồi trong 24 giờ làm việc (không hứa trước 100%), lời cảm ơn. Tối đa 150 từ. Giữ nguyên các nhãn [...], không tự bịa thông tin thật.
+
+Phần D: Thư sau khi De-mask
+Kính gửi Quý khách Phạm Minh C,
+MartX chân thành xin lỗi vì đơn hàng 2kg thịt bò Wagyu (4.500.000 VNĐ) mua ngày 20/09 tại MartX District 7 bị giao chậm 3 tiếng, làm ảnh hưởng đến tiệc gia đình của Quý khách.
+Chúng tôi đã ghi nhận yêu cầu bồi thường. Bộ phận CSKH sẽ xác minh và phản hồi qua số điện thoại 0988.111.222 hoặc email minhc@gmail.com trong vòng 24 giờ làm việc.
+Cảm ơn Quý khách đã tin tưởng MartX.
+Trân trọng,
+Bộ phận Chăm sóc khách hàng MartX
+Cách De-mask: thay nhãn trong thư AI trả về bằng thông tin thật theo Phần A, làm trên máy mình, không gửi thông tin thật cho AI.
